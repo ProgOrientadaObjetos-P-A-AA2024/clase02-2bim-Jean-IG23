@@ -1,6 +1,12 @@
 
 package paquete2;
 
+/**
+ * sale error porque en la clase padre existe un constructor y en la clase hija no hay constructor y necesita ser creado
+ * la clase hija necesita hacer uso del constructor de la clase padre 
+ * @author utpl
+ */
+
 public class EstudiantePresencial extends Estudiante{
     
     /*1.  Declarar
