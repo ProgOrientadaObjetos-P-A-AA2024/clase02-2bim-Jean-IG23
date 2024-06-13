@@ -12,35 +12,45 @@ import java.util.Scanner;
  * @author reroes
  */
 public class Ejecutor2 {
+
     public static void main(String[] args) {
         // Ingresar estudiante de tipo presencial por teclado.
         // El usuario decide cuando terminar
         // No utilizar super.toString en EstudiantePresencial
         // Debe existir 1 sola impresión de todos los estudiantes presenciales
         // No usar arreglos
-        
-        // Trabajo clases 16 junio 2022
+
+        // Trabajo clases 13 junio 2024
         Scanner entrada = new Scanner(System.in);
         boolean bandera = true;
         String cadena = "";
-        
-        while(bandera){
-            System.out.println("ingresa un saludo");
-            String saludo = entrada.nextLine();
-            cadena = String.format("%s%s\n", cadena, saludo);
-            System.out.println("Desea salir, pulse S");
+
+        while (bandera) {
+            System.out.println("Ingrese el nombre");
+            String nombre = entrada.nextLine();
+            System.out.println("Ingrese el apellido");
+            String apellido = entrada.nextLine();
+            System.out.println("Ingrese la cedula");
+            String cedula = entrada.nextLine();
+            System.out.println("Ingrese la edad");
+            int edad = entrada.nextInt();
+            System.out.println("Costo de cada credito");
+            double costo = entrada.nextDouble();
+            System.out.println("Cantidad de creditos");
+            int credito = entrada.nextInt();
+
+            EstudiantePresencial presencial = new EstudiantePresencial(nombre,
+                    apellido, cedula, edad, costo, credito);
+            presencial.calcularMatriculaPresencial();
+            
+            System.out.println("Desea salir escriba (Si)");
+            entrada.nextLine();
             String opcion = entrada.nextLine();
-            if(opcion.equals("S")){
+            cadena = String.format("%s%s\n", cadena, presencial);
+            if (opcion.toLowerCase().equals("si")) {
                 bandera = false;
             }
         }
-        
         System.out.printf("%s\n", cadena);
-        
-        
     }
 }
-
-
-
-
